@@ -2944,8 +2944,8 @@ static CURLcode override_login(struct Curl_easy *data,
     int ret;
     bool url_provided = FALSE;
 
-    if(data->state.up.user && !data->state.up.password) {
-      /* there was a user name but no password in the URL */
+    if(data->state.up.user) {
+      /* there was a user name in the URL */
       userp = &data->state.up.user;
       url_provided = TRUE;
     }
